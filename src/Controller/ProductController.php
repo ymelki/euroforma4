@@ -15,11 +15,12 @@ function save_product(){
     
 }
 
-//ENREGISTRER un produit
+//afficher tout les produit
 function afficher_product(){
-    echo "je passe par la fonction afficher_product";
-    //appelle du modele le modele des produits
+     //appelle du modele le modele des produits
     include __DIR__.'/../Entity/Produit.php';
-    afficher_produit_m();   
-    
+    $liste_produit=afficher_produit_m();  
+    // inclus la vue
+    include __DIR__.'/../../templates/liste_produits.php';
+
 }

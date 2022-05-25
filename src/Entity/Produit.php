@@ -14,7 +14,7 @@
 
     function afficher_produit_m(){
     
-        $PDO=connect_bd();
+    $PDO=connect_bd();
 
             
     // Récupère les données de la table produits
@@ -24,8 +24,16 @@
     // l'opérateur flèche -> permer d'accéder aux éléments d'une classe (méthode ou attribut)
     $resultat = $PDO->prepare($requete1);
     $resultat->execute();
-        
-    echo "test" ;
+         
+    // nouveau tableau initialisé à vide
+    $rows=array();
+
+    while($ligne = $resultat->fetch()) { 
+        // enrichir mon tableau avec le tab $ligne
+        $rows[]=$ligne;
+    } 
+
+    return $rows;
 
 
 
