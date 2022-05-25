@@ -21,6 +21,12 @@ if ($path=='/catalogue'){
     include __DIR__.'/../src/Controller/ProductController.php';
     save_product();
 }
+// routeur : url /afficher_produit => controlleur des produits
+if ($path=='/afficher_produit')  {
+    echo "afficher produit";
+    include __DIR__.'/../src/Controller/ProductController.php';
+    afficher_product();
+}
 
  
 
