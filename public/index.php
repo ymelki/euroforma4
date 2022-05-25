@@ -23,10 +23,16 @@ if ($path=='/catalogue'){
 }
 // routeur : url /afficher_produit => controlleur des produits
 if ($path=='/afficher_produit')  {
-    echo "afficher produit";
     include __DIR__.'/../src/Controller/ProductController.php';
     afficher_product();
 }
+
+if ($path=='/voir')  { 
+    include __DIR__.'/../src/Controller/ProductController.php';
+    afficher_un_product();
+
+}
+
 
  
 

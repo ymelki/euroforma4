@@ -14,7 +14,7 @@
       
 
 
-    foreach($liste_produit  as $ligne){
+    foreach($produit  as $ligne){
 
     ?>
   <div class="col">

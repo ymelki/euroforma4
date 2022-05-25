@@ -13,31 +13,54 @@
     }
 
     function afficher_produit_m(){
-    
-    $PDO=connect_bd();
+        
+        $PDO=connect_bd();
 
+                
+        // Récupère les données de la table produits
+        $requete1 = 'SELECT * FROM produit';
+
+        // le prepare (avec le execute) est comme un query mais beaucoup plus sécurisé (voir ci-dessous)
+        // l'opérateur flèche -> permer d'accéder aux éléments d'une classe (méthode ou attribut)
+        $resultat = $PDO->prepare($requete1);
+        $resultat->execute();
             
-    // Récupère les données de la table produits
-    $requete1 = 'SELECT * FROM produit';
+        // nouveau tableau initialisé à vide
+        $rows=array();
 
-    // le prepare (avec le execute) est comme un query mais beaucoup plus sécurisé (voir ci-dessous)
-    // l'opérateur flèche -> permer d'accéder aux éléments d'une classe (méthode ou attribut)
-    $resultat = $PDO->prepare($requete1);
-    $resultat->execute();
-         
-    // nouveau tableau initialisé à vide
-    $rows=array();
+        while($ligne = $resultat->fetch()) { 
+            // enrichir mon tableau avec le tab $ligne
+            $rows[]=$ligne;
+        } 
 
-    while($ligne = $resultat->fetch()) { 
-        // enrichir mon tableau avec le tab $ligne
-        $rows[]=$ligne;
-    } 
-
-    return $rows;
-
-
-
-    
+        return $rows;
+ 
     }
 
+
+    
+    function afficher_un_produit_m($id){
+        
+        $PDO=connect_bd();
+
+                
+        // Récupère les données de la table produits
+        $requete1 = "SELECT * FROM produit where id = ".$id;
+
+        // le prepare (avec le execute) est comme un query mais beaucoup plus sécurisé (voir ci-dessous)
+        // l'opérateur flèche -> permer d'accéder aux éléments d'une classe (méthode ou attribut)
+        $resultat = $PDO->prepare($requete1);
+        $resultat->execute();
+            
+        // nouveau tableau initialisé à vide
+        $rows=array();
+
+        while($ligne = $resultat->fetch()) { 
+            // enrichir mon tableau avec le tab $ligne
+            $rows[]=$ligne;
+        } 
+
+        return $rows;
+ 
+    }
  

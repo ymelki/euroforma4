@@ -24,3 +24,15 @@ function afficher_product(){
     include __DIR__.'/../../templates/liste_produits.php';
 
 }
+
+
+function afficher_un_product(){
+         //appelle du modele le modele des produits
+         include __DIR__.'/../Entity/Produit.php';
+         $id=$_GET['id'];
+         $produit=afficher_un_produit_m($id);
+        // var_dump($produit)  ;
+         // inclus la vue
+         include __DIR__.'/../../templates/un_produit.php';
+     
+}
