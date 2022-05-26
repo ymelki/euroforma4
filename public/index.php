@@ -9,7 +9,8 @@ if (isset($_SERVER['PATH_INFO'])) {
 }
 
 if ($path==''){
-    echo "vous etes sur la page d accueil";
+    include __DIR__.'/../src/Controller/HomeController.php';
+    home();
  }
 if ($path=='/catalogue'){
     echo "vous etes sur la page catalogue";

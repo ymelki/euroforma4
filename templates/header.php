@@ -44,9 +44,10 @@
               <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>
               </li>
-            </ul>
-            <a href="/panier"> <i  class="fa-solid fa-cart-arrow-down fa-2xl"></i></a>   -   
-            <a href="/panier"><i class="fa-solid fa-user  fa-2xl"></i></a>
+            </ul> 
+             <a href="/panier" class="nav-item"> <i  class="fa-solid fa-user  fa-2xl"></i></a></li>
+             <a href="/panier" class="nav-item"> <i  class="fa-solid fa-cart-arrow-down fa-2xl"></i></a></li>     
+           
           </div>
         </div>
       </nav>
