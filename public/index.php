@@ -54,6 +54,12 @@ if ($path=='/vider_panier')  {
 
 }
 
+if ($path=='/supprimer_produit')  {
+    include __DIR__.'/../src/Controller/ProductController.php';
+    supprimer_produit();
+
+}
+
 
 
 

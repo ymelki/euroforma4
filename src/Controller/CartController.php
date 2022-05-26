@@ -51,6 +51,7 @@ function vider_panier(){
     }
      
     // CAS 2 : le panier existe deja 
+    $produits=getallpanier();
     include __DIR__.'/../../templates/voir_panier.php'; 
 }
 

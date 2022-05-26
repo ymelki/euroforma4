@@ -1,5 +1,16 @@
 <?php
+function supprimer_produit(){
+    // appel du model
+    include __DIR__.'/../Entity/Produit.php';
+    $id=$_GET['id'];
+    supprimer_un_produit_m($id);
 
+    // appel de la vue grace à la fonction du controller
+    $liste_produit=afficher_produit_m();  
+    // inclus la vue
+    include __DIR__.'/../../templates/liste_produits.php';
+
+}
 //ajouter un produit
 function add_product_form(){
     //appel de la vue

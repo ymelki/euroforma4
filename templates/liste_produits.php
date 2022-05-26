@@ -24,6 +24,7 @@
         <h5 class="card-title"> <a href=/voir?id=<?=$ligne['id']?> >  <?= $ligne['nom']."</a> ". $ligne['prix']." € "?></h5>
         <p class="card-text"><?= $ligne['description'] ?></p>
         <p><a href="/ajouter_panier?id=<?= $ligne['id'] ?>" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">Ajouter au panier</a></p>
+        <p><a href="/supprimer_produit?id=<?= $ligne['id'] ?>" class="btn btn-danger active" role="button" data-bs-toggle="button" aria-pressed="true">Supprimer ce produit</a></p>
       </div>
     </div>
   </div>

@@ -19,7 +19,7 @@
     </tr>
   </thead>
   <tbody>
-      <?php var_dump($produits);
+      <?php  
        foreach($produits  as $key => $value){ ?>
 
     <tr> 

@@ -64,3 +64,12 @@
  
     }
  
+
+    function supprimer_un_produit_m($id){ 
+        $PDO=connect_bd(); 
+        // Récupère les données de la table produits
+        $requete1 = " DELETE FROM produit WHERE id = ".$id;
+
+        $stmt= $PDO->prepare($requete1);
+        $stmt->execute(); 
+    }
