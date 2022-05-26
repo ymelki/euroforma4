@@ -60,7 +60,19 @@ if ($path=='/ajouter_panier')  {
     // si non le panier existe deja
     // Ajouter au panier dans le tableau cart
     // clé : Identifiant => valeur Quantité
-    $_SESSION["cart"][$id]=1;
+    // on ajoute dans le tableau cart un element uniquement si il n'existait pas
+    // si il existait on ajoute la quantité +1
+
+    // si l element est deja present dans le tableau initial
+    if ( array_key_exists( $id, $_SESSION["cart"]) ){
+        echo "element deja existant";
+        $_SESSION["cart"][$id]=$_SESSION["cart"][$id] + 1;
+    }
+    else {
+        // nouvelle element non present dans le tab initial
+       $_SESSION["cart"][$id]=1;
+    }
+    
 
     
 
