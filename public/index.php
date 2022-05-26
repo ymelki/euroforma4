@@ -47,6 +47,7 @@ if ($path=='/panier')  {
 
 if ($path=='/ajouter_panier')  { 
     session_start();
+    $id=$_GET['id']; 
     // CAS 1 : le panier n'existe pas
 
     //1 VERIFIE SI LE PANIER EXISTE
@@ -57,7 +58,9 @@ if ($path=='/ajouter_panier')  {
         $_SESSION["cart"]=array(); 
     }
     // si non le panier existe deja
-    $_SESSION["cart"][2]=1;
+    // Ajouter au panier dans le tableau cart
+    // clé : Identifiant => valeur Quantité
+    $_SESSION["cart"][$id]=1;
 
     
 
