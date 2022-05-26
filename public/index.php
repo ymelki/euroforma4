@@ -37,12 +37,48 @@ if ($path=='/panier')  {
     session_start();
 
     // $_SESSION["mavar"]="test";
-
-    var_dump($_COOKIE);
+ 
     var_dump($_SESSION);
   
 
 }
+
+
+
+if ($path=='/ajouter_panier')  { 
+    session_start();
+    // CAS 1 : le panier n'existe pas
+
+    //1 VERIFIE SI LE PANIER EXISTE
+
+    //2 CREATION DE MON PANIER
+    // dans le cas il n'existe pas
+    if (!isset($_SESSION["cart"])){
+        $_SESSION["cart"]=array(); 
+    }
+    // si non le panier existe deja
+    $_SESSION["cart"]=[1,1];
+
+    
+
+    // CAS 2 : le panier existe deja
+
+    
+    echo "j ajoute au panier l'identifiant n ° 1";
+    var_dump($_SESSION);
+  
+
+}
+
+if ($path=='/vider_panier')  {
+    session_start();
+    session_destroy();
+
+}
+
+
+
+
 
 
  
