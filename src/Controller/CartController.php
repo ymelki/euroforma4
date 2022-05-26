@@ -71,7 +71,10 @@ function vider_panier(){
        $produit = afficher_un_produit_m($key);
 
        // a chaque boucle je met la ligne produite complete et sa quantite
-       $tab_produit_full[]=[$produit,$value]; 
+       $tab_produit_full[]=[
+           'product'=>$produit,
+           'quantite'=>$value
+        ]; 
     }
 
     return $tab_produit_full;

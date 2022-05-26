@@ -23,7 +23,12 @@
       <td><?=$key ?> 
     
     </td>
-      <td><?=$produits['nom'] ?></td> 
+      <td>
+        <?php 
+        echo $value['product']['id'];
+         ?>
+          
+    </td> 
 
 
     </tr>
