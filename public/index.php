@@ -35,10 +35,11 @@ if ($path=='/voir')  {
 
 if ($path=='/panier')  { 
     session_start();
-
-    // $_SESSION["mavar"]="test";
  
-    var_dump($_SESSION);
+    include __DIR__.'/../templates/voir_panier.php';
+
+ 
+  
   
 
 }
@@ -80,7 +81,10 @@ if ($path=='/ajouter_panier')  {
 
     
     echo "j ajoute au panier l'identifiant n ° 1";
+    
+    include __DIR__.'/../templates/voir_panier.php';
     var_dump($_SESSION);
+
   
 
 }
