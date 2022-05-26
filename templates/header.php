@@ -46,8 +46,7 @@
               </li>
             </ul>
             <a href="/panier"> <i  class="fa-solid fa-cart-arrow-down fa-2xl"></i></a>   -   
-            <a href="/vider_panier" class="btn btn-primary"> Vider le panier </a>  
-             
+            <a href="/panier"><i class="fa-solid fa-user  fa-2xl"></i></a>
           </div>
         </div>
       </nav>

@@ -25,6 +25,9 @@
   </tbody>
 </table>
 
+<a href="/vider_panier" class="btn btn-primary"> Vider le panier </a>  
+
+
 
 
 

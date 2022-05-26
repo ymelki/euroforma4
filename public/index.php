@@ -1,4 +1,6 @@
 <?php  
+
+session_start();
 if (!isset($_SERVER['PATH_INFO'])) {
     $path="";
 }
@@ -33,65 +35,21 @@ if ($path=='/voir')  {
 
 }
 
-if ($path=='/panier')  { 
-    session_start();
- 
-    include __DIR__.'/../templates/voir_panier.php';
-
- 
-  
-  
-
+if ($path=='/panier')  {  
+    include __DIR__.'/../src/Controller/CartController.php';
+    panier(); 
 }
-
-
+ 
 
 if ($path=='/ajouter_panier')  { 
-    session_start();
-    $id=$_GET['id']; 
-    // CAS 1 : le panier n'existe pas
-
-    //1 VERIFIE SI LE PANIER EXISTE
-
-    //2 CREATION DE MON PANIER
-    // dans le cas il n'existe pas
-    if (!isset($_SESSION["cart"])){
-        $_SESSION["cart"]=array(); 
-    }
-    // si non le panier existe deja
-    // Ajouter au panier dans le tableau cart
-    // clé : Identifiant => valeur Quantité
-    // on ajoute dans le tableau cart un element uniquement si il n'existait pas
-    // si il existait on ajoute la quantité +1
-
-    // si l element est deja present dans le tableau initial
-    if ( array_key_exists( $id, $_SESSION["cart"]) ){
-        echo "element deja existant";
-        $_SESSION["cart"][$id]=$_SESSION["cart"][$id] + 1;
-    }
-    else {
-        // nouvelle element non present dans le tab initial
-       $_SESSION["cart"][$id]=1;
-    }
-    
-
-    
-
-    // CAS 2 : le panier existe deja
-
-    
-    echo "j ajoute au panier l'identifiant n ° 1";
-    
-    include __DIR__.'/../templates/voir_panier.php';
-    var_dump($_SESSION);
-
-  
+    include __DIR__.'/../src/Controller/CartController.php';
+    ajouter_panier();
 
 }
 
 if ($path=='/vider_panier')  {
-    session_start();
-    session_destroy();
+    include __DIR__.'/../src/Controller/CartController.php';
+    vider_panier();
 
 }
 
