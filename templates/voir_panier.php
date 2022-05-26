@@ -12,6 +12,9 @@
     <tr> 
       <th scope="col">NUM</th>
       <th scope="col">ID_PRODUIT</th>
+      <th scope="col">NOM</th>
+      <th scope="col">PRIX</th>
+      <th scope="col">DESCRIPTION</th>
       <th scope="col">QUANTITE</th> 
     </tr>
   </thead>
@@ -20,15 +23,12 @@
        foreach($produits  as $key => $value){ ?>
 
     <tr> 
-      <td><?=$key ?> 
-    
-    </td>
-      <td>
-        <?php 
-        echo $value['product']['id'];
-         ?>
-          
-    </td> 
+      <td><?=$key ?> </td>
+      <td><?=$value['product']['id']; ?></td> 
+      <td><?=$value['product']['nom']; ?></td> 
+      <td><?=$value['product']['prix']; ?></td>
+      <td><?=$value['product']['description']; ?></td> 
+      <td><?=$value['quantite']; ?></td> 
 
 
     </tr>
