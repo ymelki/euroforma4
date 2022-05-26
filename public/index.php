@@ -57,7 +57,7 @@ if ($path=='/ajouter_panier')  {
         $_SESSION["cart"]=array(); 
     }
     // si non le panier existe deja
-    $_SESSION["cart"]=[1,1];
+    $_SESSION["cart"][2]=1;
 
     
 
