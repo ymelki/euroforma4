@@ -33,6 +33,17 @@ if ($path=='/voir')  {
 
 }
 
+if ($path=='/panier')  { 
+    session_start();
+
+    // $_SESSION["mavar"]="test";
+
+    var_dump($_COOKIE);
+    var_dump($_SESSION);
+  
+
+}
+
 
  
 
