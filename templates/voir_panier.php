@@ -1,32 +1,39 @@
 <?php include "header.php";     ?>
 <?php
 
+
        
 ?>
 
       <p class="h1">Votre panier</p>
-
-
+<?php if (isset($_SESSION['cart'])) { ?>
  <table class="table">
   <thead>
     <tr> 
+      <th scope="col">NUM</th>
       <th scope="col">ID_PRODUIT</th>
       <th scope="col">QUANTITE</th> 
     </tr>
   </thead>
   <tbody>
-      <?php   foreach($_SESSION['cart']  as $key => $value){ ?>
+      <?php var_dump($produits);
+       foreach($produits  as $key => $value){ ?>
 
     <tr> 
-      <td><?=$key ?></td>
-      <td><?=$value ?></td> 
+      <td><?=$key ?> 
+    
+    </td>
+      <td><?=$produits['nom'] ?></td> 
+
+
     </tr>
     <?php   } ?>
   </tbody>
 </table>
 
-<a href="/vider_panier" class="btn btn-primary"> Vider le panier </a>  
 
+<a href="/vider_panier" class="btn btn-primary"> Vider le panier </a>  
+<?php } else { echo "le panier est vide"; } ?>
 
 
 

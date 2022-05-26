@@ -2,6 +2,7 @@
 
 
 function panier(){
+    $produits=getallpanier();
      
     // afficher la vue du panier
     include __DIR__.'/../../templates/voir_panier.php';
@@ -55,7 +56,27 @@ function vider_panier(){
 
 
 
- 
+ function getallpanier(){
+
+    include __DIR__.'/../Entity/Produit.php';
+
+
+    // tableau initialisé à vide
+    $tab_produit_full=array();
+
+    // boucle sur mon panier de session 
+    foreach($_SESSION['cart']  as $key => $value){
+
+       // grace au modele je recupere la ligne complete du produit
+       $produit = afficher_un_produit_m($key);
+
+       // a chaque boucle je met la ligne produite complete et sa quantite
+       $tab_produit_full[]=[$produit,$value]; 
+    }
+
+    return $tab_produit_full;
+
+ }
  
 
 ?>

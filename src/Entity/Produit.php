@@ -57,7 +57,7 @@
 
         while($ligne = $resultat->fetch()) { 
             // enrichir mon tableau avec le tab $ligne
-            $rows[]=$ligne;
+            $rows=$ligne;
         } 
 
         return $rows;
