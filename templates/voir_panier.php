@@ -21,9 +21,8 @@
   </thead>
   <tbody>
       <?php  
-      $PT=0;
+     
       foreach($produits  as $key => $value){ 
-        $PT=($value['product']['prix']*$value['quantite']) + $PT
         ?>
 
     <tr> 
@@ -37,13 +36,12 @@
       
     </tr>
     <?php   }
-    echo $PT;
-    
     ?>
   </tbody>
 </table>
 
-
+TOTAL : <?=$PT;?>
+<br />
 <a href="/vider_panier" class="btn btn-primary"> Vider le panier </a>  
 <?php } else { echo "le panier est vide"; } ?>
 

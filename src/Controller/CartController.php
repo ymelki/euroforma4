@@ -1,8 +1,15 @@
 <?php
-
+function get_total_panier($produits){
+    $PT=0;
+    foreach($produits  as $key => $value){ 
+        $PT=($value['product']['prix']*$value['quantite']) + $PT;
+    }
+    return $PT;
+}
 
 function panier(){
     $produits=getallpanier();
+    $PT=get_total_panier($produits);
      
     // afficher la vue du panier
     include __DIR__.'/../../templates/voir_panier.php';
@@ -52,6 +59,7 @@ function vider_panier(){
      
     // CAS 2 : le panier existe deja 
     $produits=getallpanier();
+    $PT=get_total_panier($produits);
     include __DIR__.'/../../templates/voir_panier.php'; 
 }
 
