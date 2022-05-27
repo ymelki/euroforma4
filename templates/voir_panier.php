@@ -16,11 +16,15 @@
       <th scope="col">PRIX</th>
       <th scope="col">DESCRIPTION</th>
       <th scope="col">QUANTITE</th> 
+      <th scope="col">PRIX TOTAL (P. * Q.)</th> 
     </tr>
   </thead>
   <tbody>
       <?php  
-       foreach($produits  as $key => $value){ ?>
+      $PT=0;
+      foreach($produits  as $key => $value){ 
+        $PT=($value['product']['prix']*$value['quantite']) + $PT
+        ?>
 
     <tr> 
       <td><?=$key ?> </td>
@@ -29,10 +33,13 @@
       <td><?=$value['product']['prix']; ?></td>
       <td><?=$value['product']['description']; ?></td> 
       <td><?=$value['quantite']; ?></td> 
-
-
+      <td><?=$value['product']['prix']*$value['quantite']; ?></td>  
+      
     </tr>
-    <?php   } ?>
+    <?php   }
+    echo $PT;
+    
+    ?>
   </tbody>
 </table>
 

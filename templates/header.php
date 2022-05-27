@@ -9,7 +9,6 @@
     <title>Document</title>
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg bg-info">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">PROJET</a>
@@ -36,3 +35,6 @@
           </div>
         </div>
       </nav>
+
+      
+<section style="margin: 50px;"> 
