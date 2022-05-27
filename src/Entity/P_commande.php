@@ -5,10 +5,13 @@ function insert_p_commande_m(){
 
          $PDO=connect_bd();
         // insertion du num commande global
+        include_once __DIR__.'/../Controller/CartController.php';
+        $produits=getallpanier(); // recuperer les produits via la fonction
+        $total=get_total_panier($produits); // recuperer le total en bouclant sur les P.
         $sql = "INSERT INTO p_commande (id, id_user, total)  
         VALUES (?,?,? )";
         $stmt= $PDO->prepare($sql);
-        $stmt->execute([NULL,  1 , 1 ]);
+        $stmt->execute([NULL,  1 , $total ]);
 
     }
 

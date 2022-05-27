@@ -5,9 +5,7 @@ function passer_commande(){
 
     // on appelle le modele permettant d inserer les donnes en BD
     include __DIR__.'/../Entity/Ligne_commande.php';
-    ligne_commande_m();
-
-    
+    ligne_commande_m(); 
     include __DIR__.'/../../templates/home.php';
 
 
@@ -82,7 +80,7 @@ function vider_panier(){
 
  function getallpanier(){
 
-    include __DIR__.'/../Entity/Produit.php';
+    include_once __DIR__.'/../Entity/Produit.php';
 
 
     // tableau initialisé à vide

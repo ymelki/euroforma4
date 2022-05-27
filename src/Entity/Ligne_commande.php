@@ -8,13 +8,7 @@
         include_once __DIR__.'/../Entity/P_commande.php';
         insert_p_commande_m();
         $last_commande_p=afficher_last_p_commande_m();
-
-        var_dump($last_commande_p);
-
  
-
-
-
 
         // insertion de chaque ligne du panier
          foreach ( $produits as $key=>$value   ) {
