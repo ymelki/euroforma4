@@ -20,9 +20,10 @@ function add_product_form(){
 function save_product(){
     //appelle du modele
     include __DIR__.'/../Entity/Produit.php';
-    save_produit_m();
+    save_produit_m(); 
+    $liste_produit=afficher_produit_m();  
     // appelle de la vue a faire
-    echo "test";
+    include __DIR__.'/../../templates/liste_produits.php';
     
 }
 

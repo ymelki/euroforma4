@@ -2,14 +2,24 @@
     include_once __DIR__.'/../function.php';
     
     function save_produit_m(){
-    
+        var_dump($_FILES);   
+        
+         
+            move_uploaded_file($_FILES['PJ']['tmp_name'], $_SERVER["DOCUMENT_ROOT"]."/img/".$_FILES['PJ']['name']);
+            echo "Success";
+          
         $PDO=connect_bd();
 
 
-        $sql = "INSERT INTO produit (id, nom, description, prix)
-        VALUES (?,?,?,?)";
+        $sql = "INSERT INTO produit (id, nom, description, prix,image)
+        VALUES (?,?,?,?,?)";
         $stmt= $PDO->prepare($sql);
-        $stmt->execute([NULL, $_POST['nom'],  $_POST['desc'], $_POST['prix']]);
+        $stmt->execute([NULL,
+         $_POST['nom'], 
+         $_POST['desc'],
+         $_POST['prix'],
+         $_FILES['PJ']['name']
+    ]);
     }
 
     function afficher_produit_m(){
