@@ -1,4 +1,19 @@
 <?php
+function passer_commande(){
+
+
+
+    // on appelle le modele permettant d inserer les donnes en BD
+    include __DIR__.'/../Entity/Ligne_commande.php';
+    ligne_commande_m();
+
+    
+    include __DIR__.'/../../templates/home.php';
+
+
+}
+
+
 function get_total_panier($produits){
     $PT=0;
     foreach($produits  as $key => $value){ 

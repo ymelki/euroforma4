@@ -60,6 +60,16 @@ if ($path=='/supprimer_produit')  {
 
 }
 
+if ($path=='/passer_commande')  {
+
+    // on inserer les données en BD
+    // APPELLE LE MODELE
+    
+    include __DIR__.'/../src/Controller/CartController.php';
+    passer_commande()   ;
+
+}
+
 
 
 

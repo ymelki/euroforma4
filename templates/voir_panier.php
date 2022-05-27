@@ -39,8 +39,15 @@
     ?>
   </tbody>
 </table>
+<div class="container">
+    <div class="row align-items-end">
+    TOTAL : <?=$PT;?>
+    </div> 
+</div>
 
-TOTAL : <?=$PT;?>
+<p><a href="/passer_commande" class="btn btn-success  active" role="button" data-bs-toggle="button" aria-pressed="true">Passer la commande</a></p>
+
+
 <br />
 <a href="/vider_panier" class="btn btn-primary"> Vider le panier </a>  
 <?php } else { echo "le panier est vide"; } ?>
