@@ -89,8 +89,25 @@ if ($path=='/inscription_enregistrer')  {
 } 
 
 
+if ($path=='/authentification')  {
 
- 
+    // on inserer les données en BD
+    // APPELLE LE MODELE
+    include __DIR__.'/../src/Controller/UserController.php';
+
+    authentification();
+
+} 
+if ($path=='/authentification_enregistrer')  {
+
+    // on inserer les données en BD
+    // APPELLE LE MODELE
+    include __DIR__.'/../src/Controller/UserController.php';
+
+    authentification_user();
+
+} 
+
 
 
 

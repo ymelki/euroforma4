@@ -4,8 +4,8 @@
        
 ?>
 
-      <p class="h1">Inscription</p>
-<form action="/inscription_enregistrer" method="POST">
+      <p class="h1">Authentification</p>
+<form action="/authentification_enregistrer" method="POST">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
@@ -15,7 +15,7 @@
     <input type="password" class="form-control" id="exampleInputPassword1"  name="pwd">
   </div>
    
-  <button type="submit" class="btn btn-primary">Inscription</button>
+  <button type="submit" class="btn btn-primary">Authentification</button>
 </form>
 
 <a href="/connexion">Inscription</a>
