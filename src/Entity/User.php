@@ -14,7 +14,7 @@ include_once __DIR__.'/../function.php';
         $stmt= $PDO->prepare($sql);
         $stmt->execute([NULL,
          $_POST['email'], 
-         $_POST['pwd']
+         password_hash($_POST['pwd'], PASSWORD_BCRYPT)
     ]);
     }
 
