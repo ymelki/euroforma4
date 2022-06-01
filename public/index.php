@@ -69,9 +69,24 @@ if ($path=='/passer_commande')  {
     passer_commande()   ;
 
 }
+if ($path=='/connexion')  {
 
+    // on inserer les données en BD
+    // APPELLE LE MODELE
+    include __DIR__.'/../src/Controller/UserController.php';
 
+    inscription();
 
+} 
+if ($path=='/inscription_enregistrer')  {
+
+    // on inserer les données en BD
+    // APPELLE LE MODELE
+    include __DIR__.'/../src/Controller/UserController.php';
+
+    enregistrer_user();
+
+} 
 
 
 

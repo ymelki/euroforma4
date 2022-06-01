@@ -29,7 +29,7 @@
               
                  
             </ul> 
-             <a href="/panier" class="nav-item"> <i  class="fa-solid fa-user  fa-2xl"></i></a></li>
+             <a href="/connexion" class="nav-item"> <i  class="fa-solid fa-user  fa-2xl"></i></a></li>
              <a href="/panier" class="nav-item"> <i  class="fa-solid fa-cart-arrow-down fa-2xl"></i></a></li>     
            
           </div>
