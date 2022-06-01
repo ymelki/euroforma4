@@ -26,10 +26,22 @@
               <li class="nav-item">
                 <a class="nav-link" href="/ajouter_produit">ajouter produit</a>
               </li>
+
+              <?php if (isset($_SESSION['user'])) { ?>
+                <li class="nav-item">
+                <a class="nav-link" href="/deconnexion">deconnexion</a>
+              </li>
+                
+                <?php 
+                   } ?>
               
                  
             </ul> 
-             <a href="/authentification" class="nav-item" style="color:red"> <i  class="fa-solid fa-user  fa-2xl"></i></a></li>
+             <a href="/authentification" class="nav-item"
+             <?php if (isset($_SESSION['user'])) { echo 'style="color:green"'; } else { echo 'style="color:red"'; }    ?>
+             
+             
+             > <i  class="fa-solid fa-user  fa-2xl"></i></a></li>
              <a href="/panier" class="nav-item"> <i  class="fa-solid fa-cart-arrow-down fa-2xl"></i></a></li>     
            
           </div>

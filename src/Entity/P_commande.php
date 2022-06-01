@@ -2,6 +2,8 @@
     include_once __DIR__.'/../function.php';
 
 function insert_p_commande_m(){
+        
+        $user= authentification_un_user_m($_SESSION['user']);
 
          $PDO=connect_bd();
         // insertion du num commande global
@@ -11,7 +13,7 @@ function insert_p_commande_m(){
         $sql = "INSERT INTO p_commande (id, id_user, total)  
         VALUES (?,?,? )";
         $stmt= $PDO->prepare($sql);
-        $stmt->execute([NULL,  1 , $total ]);
+        $stmt->execute([NULL,  $user[0]['id'] , $total ]);
 
     }
 

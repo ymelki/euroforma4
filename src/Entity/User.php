@@ -45,12 +45,40 @@ function authentification_user_m(){
 
     // cas mot de passe OK
     if (($mail==$rows[0]['email']) && (password_verify($mdp, $rows[0]['pwd'] ))   ){
+        $_SESSION['user']=$rows[0]['email'];
          return true;
     }
     else { 
      // cas mot de passe KO 
         return false;
     }
+ 
+}
+
+
+
+
+function authentification_un_user_m( $mail){
+          
+    $PDO=connect_bd();
+    // POST 
+    // Récupère les données de la table produits
+    $requete1 = "SELECT * FROM user where email='$mail'";
+    $resultat = $PDO->prepare($requete1);
+
+    $resultat->execute();
+
+    
+            
+    // nouveau tableau initialisé à vide
+    $rows=array();
+
+    while($ligne = $resultat->fetch()) {  
+        // enrichir mon tableau avec le tab $ligne
+        $rows[]=$ligne;
+    } 
+ 
+    return $rows;
  
 }
 

@@ -5,6 +5,8 @@ function passer_commande(){
 
     // on appelle le modele permettant d inserer les donnes en BD
     include __DIR__.'/../Entity/Ligne_commande.php';
+    include __DIR__.'/../Entity/User.php';
+   
     ligne_commande_m(); 
     include __DIR__.'/../../templates/home.php';
 
@@ -31,7 +33,7 @@ function panier(){
 
 function vider_panier(){
     
-    session_destroy();
+    unset($_SESSION['cart']);
     // redirection vers le controlleur des produits pour afficher le catalogue
     include __DIR__.'/../Controller/ProductController.php';
     afficher_product();

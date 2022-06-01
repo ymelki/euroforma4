@@ -108,7 +108,15 @@ if ($path=='/authentification_enregistrer')  {
 
 } 
 
+if ($path=='/deconnexion')  {
 
+    // on inserer les données en BD
+    // APPELLE LE MODELE
+    include __DIR__.'/../src/Controller/UserController.php';
+
+    deconnexion_user();
+
+} 
 
 
 ?>

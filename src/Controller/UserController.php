@@ -1,5 +1,10 @@
 <?php
+function deconnexion_user(){
 
+    unset($_SESSION['user']);
+    include __DIR__.'/../../templates/home.php';
+
+}
 
 function authentification(){
     include __DIR__.'/../../templates/authentification_user.php';
